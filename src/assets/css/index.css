@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~sweetalert2/src/variables';
+/* $swal2-background: #990000; */
+@import '~sweetalert2/src/sweetalert2';
+
+
+body{
+    /* background-image: url('../images/Desktop.svg'); */
+    background-size: cover;
+    width: 100%;
+    overflow-x: hidden;
+    direction: rtl;
+    --color-theme: #32462f;
+    --color-theme-light : #1e40af;
+    --color-black: #000000;
+    --color-white : #fff;
+    --color-gray-dark : #4b5563;
+    --color-gray-light :#9ca3af;
+}
+
+
+
+.containerFitsmart{
+    width: 90%;
+    margin: auto;
+}
+
+.text-color-theme {
+  color: var(--color-theme) !important;
+}
+.text-color-black {
+  color: var(--color-black) ;
+}
+.text-color-white{
+  color: var(--color-white);
+}
+/* .text-color-white{
+  color: var(--color-white);
+} */
+.text-color-gray{
+  color: var(--color-gray-dark);
+}
+.text-color-graylight{
+  color: var(--color-gray-light);
+}
+.text-color-themeLight{
+  color: var(--color-theme-light);
+}
+
+
+.bg-theme {
+   background-color: var(--color-theme) !important;
+ }
+
+.btnFitsmart{
+  @apply shadow-2xl  w-full h-[40px] px-5 py-2 rounded-2xl text-center text-sm text-white font-normal bg-gradient-to-t from-fuchsia-950 via-fuchsia-800 to-fuchsia-600
+  
+  }
+
+.btnFitsmart:hover{
+    background: #4b004f;
+    background: linear-gradient(
+      0deg,
+      #721378 0%,
+      #8a0194 100%
+    );
+    transition: 0.5s;
+    
+}
+
+.formShadow {
+  box-shadow: 0px 4px 44px 0px #7d8da738;
+  background-color: white;
+}
+
+input:focus{
+  outline: none;
+}
+textarea{
+  outline: none;
+}
+.Multiselect {
+  --ms-font-size: 12px;
+--ms-ring-width: 1px;
+--ms-ring-color: #69b6fff5;
+--ms-placeholder-color: #0a2149;
+--ms-option-font-size: 0.75rem;
+--ms-option-color-pointed: #1F2937;
+--ms-option-bg-selected: #1075b9;
+--ms-option-bg-selected-pointed: #34527c;
+--ms-option-color-selected-disabled: #6d7e97;
+--ms-empty-color: #4B5563;
+--ms-border-width: 0px;
+--ms-tag-font-size: 12px;
+}
+
+
+
+body:has(#loader) #app{
+  filter: blur(5px);
+
+}
+
+
+
