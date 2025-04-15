@@ -6,20 +6,23 @@
         <router-link to="/">
           <logo />
         </router-link>
+        <router-link class="block md:hidden hover:text-green-900" to="/"
+              > منو</router-link
+            >
         <ul class="hidden md:flex gap-4">
           <li>
             <router-link class="hover:text-green-900" to="/"
-              >نوشیدنی ها</router-link
+              > منو</router-link
             >
           </li>
           <li>
             <router-link class="hover:text-green-900" to="/"
-              >خوشمزه ها</router-link
+              >درباره ما</router-link
             >
           </li>
           <li>
             <router-link class="hover:text-green-900" to="/"
-              >کیک ها</router-link
+              > گالری</router-link
             >
           </li>
           <li>
@@ -120,10 +123,10 @@
 
         <!-- لینک‌های منو -->
         <router-link class="hover:text-green-900" to="/"
-          >نوشیدنی ها</router-link
+          > منو</router-link
         >
-        <router-link class="hover:text-green-900" to="/">خوشمزه ها</router-link>
-        <router-link class="hover:text-green-900" to="/">کیک ها</router-link>
+        <router-link class="hover:text-green-900" to="/">درباره ما</router-link>
+        <router-link class="hover:text-green-900" to="/"> گالری</router-link>
         <router-link class="hover:text-green-900" to="/"
           >تماس با ما</router-link
         >

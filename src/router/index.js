@@ -9,6 +9,8 @@ import signInDr from "@/views/signInDr.vue"
 import drPageVue from '@/views/drPage.vue'
 import webloglist from '@/views/webloglist.vue'
 import blogDetail from '@/views/blogDetail.vue'
+import menu from '@/views/menu.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -61,6 +63,11 @@ const router = createRouter({
       path: '/blog-detail/:id',
       name: 'blogDetail',
       component: blogDetail
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: menu
     },
     
 
