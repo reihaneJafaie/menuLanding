@@ -28,9 +28,9 @@
               alt=""
             />
           </figure>
-          <p class="my-4 leading-8">
+          <!-- <p class="my-4 leading-8">
             <div v-html="getDblog.body" class="bodyWeblog"></div>
-          </p>
+          </p> -->
         </section>
         <div v-html="d"></div>
       </section>

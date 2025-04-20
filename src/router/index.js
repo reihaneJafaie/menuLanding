@@ -1,15 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutFitSmartVue from '@/views/AboutFitSmart.vue'
-import FrequentlyAskedQuestions from '@/views/FrequentlyAskedQuestions.vue'
-import ListDoctor from "@/views/ListDoctor.vue"
 import contactUsVue from '@/views/contactUs.vue'
-import signInDr from "@/views/signInDr.vue"
 // import signinDr from "@/views/signinDr.vue"
-import drPageVue from '@/views/drPage.vue'
 import webloglist from '@/views/webloglist.vue'
 import blogDetail from '@/views/blogDetail.vue'
 import menu from '@/views/menu.vue'
+import cart from '@/views/cart.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,36 +21,36 @@ const router = createRouter({
       name: 'about',
       component: AboutFitSmartVue
     },
-    {
-      path: '/faq',
-      name: 'FrequentlyAskedQuestions',
-      component: FrequentlyAskedQuestions
-    },
-    {
-      path: '/list-doctor',
-      name: 'ListDoctor',
-      component: ListDoctor
-    },
+   //  {
+   //    path: '/faq',
+   //    name: 'FrequentlyAskedQuestions',
+   //    component: FrequentlyAskedQuestions
+   //  },
+   //  {
+   //    path: '/list-doctor',
+   //    name: 'ListDoctor',
+   //    component: ListDoctor
+   //  },
     {
       path: '/contact-us',
       name: 'contactUsVue',
       component: contactUsVue
     },
-    {
-      path: '/signin-dr',
-      name: 'signInDr',
-      component: signInDr
-    },
-    // {
-    //   path: '/signin-dr',
-    //   name: 'signinDr',
-    //   component: signinDr
-    // },
-    {
-      path: '/page-dr/:id',
-      name: 'drPageVue',
-      component: drPageVue
-    },
+   //  {
+   //    path: '/signin-dr',
+   //    name: 'signInDr',
+   //    component: signInDr
+   //  },
+   //  // {
+   //  //   path: '/signin-dr',
+   //  //   name: 'signinDr',
+   //  //   component: signinDr
+   //  // },
+   //  {
+   //    path: '/page-dr/:id',
+   //    name: 'drPageVue',
+   //    component: drPageVue
+   //  },
     {
       path: '/weblogs',
       name: 'webloglist',
@@ -69,7 +66,11 @@ const router = createRouter({
       name: 'menu',
       component: menu
     },
-    
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
+    },
 
   ],
   scrollBehavior(to, from, savedPosition) {

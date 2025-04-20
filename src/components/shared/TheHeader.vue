@@ -6,12 +6,12 @@
         <router-link to="/">
           <logo />
         </router-link>
-        <router-link class="block md:hidden hover:text-green-900" to="/"
+        <router-link class="block md:hidden hover:text-green-900" to="/menu"
               > منو</router-link
             >
         <ul class="hidden md:flex gap-4">
           <li>
-            <router-link class="hover:text-green-900" to="/"
+            <router-link class="hover:text-green-900" to="/menu"
               > منو</router-link
             >
           </li>
@@ -44,12 +44,14 @@
     <p class="hidden md:inline">ورود/ ثبت نام</p>
   </router-link>
 
+  <!-- سبد خرید -->
   <router-link
     class="p-2 bg-green-900 text-white rounded-full md:px-6 py-2 text-xs flex items-center gap-1"
-    to="/"
+    to="/cart"
   >
     <cart />
     <p class="hidden md:inline">سبد خرید</p>
+    <span v-if="cartCount" class="ml-2 bg-red-600 text-white text-xs rounded-full px-2 py-1">{{ cartCount }}</span>
   </router-link>
 </div>
 
@@ -122,7 +124,7 @@
         </button>
 
         <!-- لینک‌های منو -->
-        <router-link class="hover:text-green-900" to="/"
+        <router-link class="hover:text-green-900" to="/menu"
           > منو</router-link
         >
         <router-link class="hover:text-green-900" to="/">درباره ما</router-link>
@@ -136,12 +138,17 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, computed, watch } from "vue";
 import logo from "@/components/shared/Logo.vue";
 import cart from "@/components/icon/cart.vue";
 import login from "@/components/icon/login.vue";
+import { useCartStore } from "@/stores/cart"; // استفاده از Store برای سبد خرید
 
 const isMenuOpen = ref(false);
+
+// استفاده از Pinia برای دسترسی به وضعیت سبد خرید
+const cartStore = useCartStore();
+const cartCount = computed(() => cartStore.cartCount);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;

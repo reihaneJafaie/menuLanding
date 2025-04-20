@@ -77,12 +77,17 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import { reactive, ref, computed, nextTick } from 'vue'
 
+// دسته‌بندی‌ها
 const categories = ['پیش‌غذا', 'غذای اصلی', 'دسر', 'نوشیدنی']
+
+// ارجاع به هر دسته برای اسکرول
 const categoryRefs = reactive({})
 
+// آیتم‌های منو
 const menuItems = reactive([
   // پیش‌غذا
   {
@@ -285,39 +290,50 @@ const menuItems = reactive([
   }
 ])
 
-const filteredMenuItems = cat => menuItems.filter(item => item.category === cat)
 
+// سبد خرید
 const cart = reactive({})
 
-const cartCount = computed(() => Object.values(cart).reduce((sum, count) => sum + count, 0))
+// تعداد کل اقلام در سبد خرید
+const cartCount = computed(() =>
+  Object.values(cart).reduce((total, count) => total + count, 0)
+)
 
+// افزودن به سبد خرید
 const addToCart = item => {
   cart[item.id] = 1
 }
 
+// افزایش تعداد یک آیتم
 const increaseCount = item => {
-  if (cart[item.id]) cart[item.id]++
-}
-
-const decreaseCount = item => {
-  if (cart[item.id] > 1) {
-    cart[item.id]--
-  } else {
-    delete cart[item.id]
+  if (cart[item.id]) {
+    cart[item.id]++
   }
 }
 
-const scrollToCategory = cat => {
-  nextTick(() => {
-    const el = categoryRefs[cat]
-    if (el && el.scrollIntoView) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+// کاهش تعداد یک آیتم
+const decreaseCount = item => {
+  if (cart[item.id]) {
+    cart[item.id]--
+    if (cart[item.id] === 0) {
+      delete cart[item.id]
     }
-  })
+  }
+}
+
+// فیلتر کردن آیتم‌ها بر اساس دسته‌بندی
+const filteredMenuItems = category => {
+  return menuItems.filter(item => item.category === category)
+}
+
+// اسکرول به دسته‌بندی
+const scrollToCategory = category => {
+  const el = categoryRefs[category]
+  if (el && el.scrollIntoView) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 }
 </script>
-
-
 
 <style scoped>
 html {
